@@ -39,6 +39,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+<<<<<<< HEAD
     public function redirectToGoogle(){
         return Socialite::driver('google')->redirect();
     }
@@ -68,4 +69,6 @@ class LoginController extends Controller
 
         return $newUser;
     }
+=======
+>>>>>>> 81b34f65176df100ceef8a50e21bb1363132d0bc
 }
