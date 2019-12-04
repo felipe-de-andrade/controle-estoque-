@@ -18,6 +18,8 @@ Route::get('/', function () {
 
  
 Auth::routes();
+Route::get('/login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@receiveDataGoogle');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -25,7 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/produtos/cadastrar', 'ProductController@viewForm');
+Route::get('/produtos/cadastrar', 'ProductController@viewForm')->middleware('checkuser');
 Route::post('/produtos/cadastrar', 'ProductController@create');
 
 
